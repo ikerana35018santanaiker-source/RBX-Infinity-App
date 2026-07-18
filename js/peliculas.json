@@ -1,0 +1,89 @@
+{
+  "banners": [
+    {
+      "id": "banner1",
+      "titulo": "MICHAEL - LA HISTORIA DEL REY-SPHERE",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "La impactante historia del misterioso Rey-Sphere. Secretos oscuros, traiciones y un poder capaz de cambiar el destino del mundo.",
+      "banner": null,
+      "poster": "https://i.ibb.co/W4yZ4pbP/IMG-8052.png",
+      "trailer": null,
+      "año": 2027,
+      "genero": "Suspenso",
+      "rating": "NR",
+      "duracion": "Desconocida",
+      "tipo": "pelicula"
+    },
+    {
+      "id": "banner2",
+      "titulo": "IT BROOKHAVEN MOVIE - NI LA CRUZ TE SALVA",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "El terror llega a Brookhaven cuando una presencia maldita comienza a perseguir a sus habitantes. Nadie está seguro... ni la cruz te salva.",
+      "banner": null,
+      "poster": "https://i.ibb.co/s95n7FLy/IMG-8051.png",
+      "trailer": "https://www.image2url.com/r2/default/videos/1779635375841-eadedb6f-ea87-4e7a-8de0-dbc4a27b82a3.mp4",
+      "año": 2027,
+      "genero": "Terror",
+      "rating": "NR",
+      "duracion": "Desconocida",
+      "tipo": "pelicula"
+    },
+    {
+      "id": "banner3",
+      "titulo": "INSIDIOUS PRIMER-CONTACTÓ",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "Una perturbadora conexión entre dimensiones desata entidades desconocidas. El primer contacto podría ser el último.",
+      "banner": "https://i.ibb.co/VYVBSBMx/435-sin-titulo-20260524113304.png",
+      "poster": "https://i.ibb.co/Psqth0CB/IMG-8050.png",
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror",
+      "rating": "NR",
+      "duracion": "Desconocida",
+      "tipo": "pelicula"
+    }
+  ],
+  "peliculas": [],
+  "series": [],
+  "proximamente": [
+    {
+      "id": "up1",
+      "titulo": "MICHAEL - LA HISTORIA DEL REY-SPHERE",
+      "descripcion": "La impactante historia del misterioso Rey-Sphere. Secretos oscuros, traiciones y un poder capaz de cambiar el destino del mundo.",
+      "poster": "https://i.ibb.co/W4yZ4pbP/IMG-8052.png",
+      "banner": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Suspenso",
+      "rating": "NR",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente"
+    },
+    {
+      "id": "up2",
+      "titulo": "IT BROOKHAVEN MOVIE - NI LA CRUZ TE SALVA",
+      "descripcion": "El terror llega a Brookhaven cuando una presencia maldita comienza a perseguir a sus habitantes. Nadie está seguro... ni la cruz te salva.",
+      "poster": "https://i.ibb.co/s95n7FLy/IMG-8051.png",
+      "banner": null,
+      "trailer": "https://www.image2url.com/r2/default/videos/1779635375841-eadedb6f-ea87-4e7a-8de0-dbc4a27b82a3.mp4",
+      "fecha": null,
+      "genero": "Terror",
+      "rating": "NR",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente"
+    },
+    {
+      "id": "up3",
+      "titulo": "INSIDIOUS PRIMER-CONTACTÓ",
+      "descripcion": "Una perturbadora conexión entre dimensiones desata entidades desconocidas. El primer contacto podría ser el último.",
+      "poster": "https://i.ibb.co/Psqth0CB/IMG-8050.png",
+      "banner": "https://i.ibb.co/VYVBSBMx/435-sin-titulo-20260524113304.png",
+      "trailer": null,
+      "fecha": "2027-06-09T00:00:00",
+      "genero": "Terror",
+      "rating": "NR",
+      "tipo": "pelicula",
+      "etiqueta": "9 Junio 2027"
+    }
+  ]
+}
