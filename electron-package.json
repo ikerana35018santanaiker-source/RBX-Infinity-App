@@ -1,0 +1,81 @@
+{
+  "name": "rbx-infinity",
+  "productName": "RBX Infinity",
+  "version": "1.0.0",
+  "main": "build/src/main.js",
+
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+
+  "dependencies": {
+    "electron-updater": "^6.8.9",
+    "discord-rpc": "^4.0.1"
+  },
+
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+
+  "build": {
+    "appId": "com.rbx.infinity",
+    "productName": "RBX Infinity",
+
+    "publish": {
+      "provider": "github",
+      "owner": "TU_GITHUB",
+      "repo": "rbx-infinity"
+    },
+
+    "files": [
+      "build/src/**/*",
+      "index.html",
+      "js/**/*",
+      "css/**/*",
+      "resources/**/*",
+      "*.json",
+      "!node_modules/**/*"
+    ],
+    "extraResources": [
+      { "from": "build/icons", "to": "icons" }
+    ],
+
+    "win": {
+      "target": "nsis",
+      "icon": "build/icons/icon.ico"
+    },
+
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icons/icon.icns"
+    },
+
+    "nsis": {
+      "oneClick": false,
+
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true,
+
+      "installerIcon": "build/icons/icon.ico",
+      "uninstallerIcon": "build/icons/icon.ico",
+
+      "installerHeaderIcon": "build/installer/header.bmp",
+      "installerSidebar": "build/installer/background.bmp",
+
+      "license": "build/installer/license.txt",
+
+      "displayLanguageSelector": true,
+
+      "language": [
+        "English",
+        "Spanish"
+      ]
+    }
+  }
+}

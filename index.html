@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RBX Infinity</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="https://i.ibb.co/zHWzJ1Lt/1-F452206-FCFC-4237-AF61-C3239-AAEC3-BE.jpg">
+  <script src="https://js.puter.com/v2/"></script>
+  <style>
+    /* ─── INTRO SCREEN ──────────────────────────────────────────── */
+    #introScreen {
+      position: fixed; inset: 0; z-index: 99999;
+      background: #000;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .6s ease;
+    }
+    #introScreen.fade-out { opacity: 0; pointer-events: none; }
+    #introScreen.hidden { display: none; }
+    #introVideo {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    #introSkipBtn {
+      position: absolute; bottom: 32px; right: 32px;
+      background: rgba(0,0,0,.55);
+      border: 1.5px solid rgba(255,255,255,.35);
+      border-radius: 6px; padding: 9px 20px;
+      color: #fff; font-size: .82rem; font-weight: 600;
+      cursor: pointer; letter-spacing: .5px;
+      opacity: 0; transition: opacity .4s ease;
+      backdrop-filter: blur(6px);
+    }
+    #introSkipBtn.visible { opacity: 1; }
+    /* Profile screen fade-in animation */
+    #profileSelectScreen.intro-reveal {
+      animation: introReveal .7s cubic-bezier(.4,0,.2,1) forwards;
+    }
+    @keyframes introReveal {
+      from { opacity: 0; transform: scale(.97); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── INTRO VIDEO ────────────────────────────────────────────────────────── -->
+<div id="introScreen">
+  <video id="introVideo" playsinline preload="auto" muted
+    src="https://videotourl.com/videos/1780333110730-cf90132e-ccd2-4bec-a5a5-22c653f646ef.mp4"
+    onerror="skipIntroFallback()">
+  </video>
+  <button id="introSkipBtn" onclick="finishIntro()">Saltar →</button>
+</div>
+
+<!-- ─── LOADING ────────────────────────────────────────────────────────────── -->
+<div id="loadingOverlay">
+  <img class="loader-logo" src="https://i.ibb.co/zHWzJ1Lt/1-F452206-FCFC-4237-AF61-C3239-AAEC3-BE.jpg" alt="RBX Infinity">
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- ─── AUTH SCREEN ──────────────────────────────────────────────────────────── -->
+<div id="authScreen" style="display:none">
+  <div class="auth-bg-art"></div>
+  <div class="auth-card" id="authCard">
+
+    <!-- LOGIN TAB -->
+    <div class="auth-tab" id="tabLogin">
+      <img class="auth-logo" src="https://i.ibb.co/zHWzJ1Lt/1-F452206-FCFC-4237-AF61-C3239-AAEC3-BE.jpg" alt="RBX Infinity">
+      <h2 data-i18n="auth_login_title">Iniciar sesión</h2>
+      <p class="auth-sub" data-i18n="auth_welcome_back">Bienvenido de nuevo</p>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_email">Correo electrónico</label>
+        <input type="email" id="loginEmail" placeholder="correo@ejemplo.com" autocomplete="email"
+          onkeydown="if(event.key==='Enter') handleLogin()">
+      </div>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_password">Contraseña</label>
+        <div class="input-eye-wrap">
+          <input type="password" id="loginPassword" placeholder="Tu contraseña" autocomplete="current-password"
+            onkeydown="if(event.key==='Enter') handleLogin()">
+          <button type="button" class="eye-btn" onclick="togglePwd('loginPassword',this)">👁</button>
+        </div>
+      </div>
+      <button class="auth-link-btn" data-i18n="auth_forgot" onclick="switchAuthTab('tabReset')">¿Olvidaste tu contraseña?</button>
+      <button class="btn-primary" data-i18n="auth_login_btn" onclick="handleLogin()">Iniciar sesión</button>
+      <div class="auth-divider" data-i18n="auth_or">o</div>
+      <button class="btn-google" onclick="handleGoogleLogin()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+        <span data-i18n="auth_google">Continuar con Google</span>
+      </button>
+      <p class="auth-switch"><span data-i18n="auth_no_account">¿No tienes cuenta?</span> <button data-i18n="auth_signup_free" onclick="switchAuthTab('tabRegister')">Regístrate gratis</button></p>
+    </div>
+
+    <!-- REGISTER TAB -->
+    <div class="auth-tab" id="tabRegister" style="display:none">
+      <img class="auth-logo" src="https://i.ibb.co/zHWzJ1Lt/1-F452206-FCFC-4237-AF61-C3239-AAEC3-BE.jpg" alt="RBX Infinity">
+      <h2 data-i18n="auth_register_title">Crear cuenta</h2>
+      <p class="auth-sub" data-i18n="auth_join_free">Únete a RBX Infinity gratis</p>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_username">Nombre de usuario</label>
+        <input type="text" id="regUsername" placeholder="Tu nombre en RBX Infinity" maxlength="24" autocomplete="username">
+      </div>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_email">Correo electrónico</label>
+        <input type="email" id="regEmail" placeholder="correo@ejemplo.com" autocomplete="email">
+      </div>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_password">Contraseña</label>
+        <div class="input-eye-wrap">
+          <input type="password" id="regPassword" placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+          <button type="button" class="eye-btn" onclick="togglePwd('regPassword',this)">👁</button>
+        </div>
+      </div>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_confirm_pwd">Confirmar contraseña</label>
+        <div class="input-eye-wrap">
+          <input type="password" id="regConfirm" placeholder="Repite tu contraseña" autocomplete="new-password">
+          <button type="button" class="eye-btn" onclick="togglePwd('regConfirm',this)">👁</button>
+        </div>
+      </div>
+      <button class="btn-primary" data-i18n="auth_create_btn" onclick="handleRegister()">Crear cuenta</button>
+      <div class="auth-divider" data-i18n="auth_or">o</div>
+      <button class="btn-google" onclick="handleGoogleLogin()">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+        <span data-i18n="auth_google">Continuar con Google</span>
+      </button>
+      <p class="auth-switch"><span data-i18n="auth_have_account">¿Ya tienes cuenta?</span> <button data-i18n="auth_login_btn" onclick="switchAuthTab('tabLogin')">Inicia sesión</button></p>
+    </div>
+
+    <!-- RESET PASSWORD TAB -->
+    <div class="auth-tab" id="tabReset" style="display:none">
+      <div class="verify-icon">🔐</div>
+      <h2 data-i18n="auth_reset_title">Restablecer contraseña</h2>
+      <p class="auth-sub" data-i18n="auth_reset_sub">Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña.</p>
+      <div class="auth-input-wrap">
+        <label data-i18n="auth_email">Correo electrónico</label>
+        <input type="email" id="resetEmail" placeholder="correo@ejemplo.com"
+          onkeydown="if(event.key==='Enter') handleResetPassword()">
+      </div>
+      <button class="btn-primary" data-i18n="auth_send_reset" onclick="handleResetPassword()">Enviar enlace de restablecimiento</button>
+      <button class="btn-secondary" style="width:100%;margin-top:10px" data-i18n="auth_back_login" onclick="switchAuthTab('tabLogin')">← Volver al login</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── PROFILE SELECT ────────────────────────────────────────────────────────── -->
+<div id="profileSelectScreen">
+  <div class="profile-select-header">
+    <img src="https://i.ibb.co/zHWzJ1Lt/1-F452206-FCFC-4237-AF61-C3239-AAEC3-BE.jpg" alt="RBX Infinity">
+    <h1>¿Quién está viendo?</h1>
+  </div>
+  <div id="profilesGrid"></div>
+</div>
+
+<!-- ─── ADD PROFILE MODAL ─────────────────────────────────────────────────────── -->
+<div id="addProfileModal">
+  <div class="add-profile-card">
+    <h3>Nuevo perfil</h3>
+    <input type="text" id="newProfileName" placeholder="Nombre del perfil" maxlength="20">
+    <label>Elige un avatar:</label>
+    <div id="avatarPickerGrid"></div>
+    <label class="kids-toggle-row">
+      <input type="checkbox" id="newProfileIsKids">
+      <span>🧒 Perfil infantil <small>(solo contenido apto para menores de 13 años)</small></span>
+    </label>
+    <div class="modal-btns">
+      <button class="btn-secondary" onclick="closeAddProfileModal()">Cancelar</button>
+      <button class="btn-primary" style="flex:1" onclick="saveNewProfile()">Crear perfil</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MAIN APP ──────────────────────────────────────────────────────────── -->
+<div id="mainApp">
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-left">
+      <img class="nav-logo"
+        src="https://i.ibb.co/zHWzJ1Lt/1-F452206-FCFC-4237-AF61-C3239-AAEC3-BE.jpg"
+        alt="RBX Infinity" onclick="navigateTo('home')" style="cursor:pointer">
+      <ul class="nav-links">
+
+        <!-- Inicio -->
+        <li>
+          <a href="#/home" class="nav-link active" data-page="home" data-i18n="nav_home"
+            onclick="event.preventDefault();navigateTo('home')">Inicio</a>
+        </li>
+
+        <!-- Explorar ▼ -->
+        <li>
+          <div class="nav-item-drop">
+            <a href="#" class="nav-link nav-link-explore" onclick="event.preventDefault()">
+              Explorar
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"
+                style="margin-left:3px;vertical-align:-1px;opacity:.6">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </a>
+            <div class="nav-dropdown nav-dropdown-explore">
+              <div class="nav-drop-label">Explorar</div>
+              <div class="nav-drop-item" onclick="navigateTo('shows')">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                <span data-i18n="nav_series">Series</span>
+              </div>
+              <div class="nav-drop-item" onclick="navigateTo('movies')">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>
+                <span data-i18n="nav_movies">Películas</span>
+              </div>
+              <div class="nav-drop-item" onclick="navigateTo('streams')">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><circle cx="12" cy="12" r="3"/><path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z"/></svg>
+                Directos
+                <span class="nav-drop-live-dot"></span>
+              </div>
+              <div class="nav-drop-item" onclick="navigateTo('upcoming')">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                <span data-i18n="nav_upcoming">Próximamente</span>
+                <span id="upcomingBadge" class="nav-badge" style="display:none"></span>
+              </div>
+              <div class="nav-drop-divider"></div>
+              <div class="nav-drop-item" onclick="navigateTo('soundtracks')">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                Soundtracks
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- PartyWatch: join by PIN (creating one now happens from the detail page) -->
+        <li>
+          <a href="#" class="nav-link" data-i18n="nav_partywatch" onclick="event.preventDefault();openJoinPartyWatchPrompt()">PartyWatch</a>
+        </li>
+
+        <!-- My RBX -->
+        <li>
+          <a href="#/myrbx" class="nav-link" data-page="mynetflix"
+            onclick="event.preventDefault();navigateTo('mynetflix')">My RBX</a>
+        </li>
+
+        <!-- RBX+ (oculto hasta que el usuario tenga RBX+) -->
+        <li id="navRbxPlusLi" style="display:none">
+          <a href="#/rbxplus" class="nav-link nav-link-rbxplus" data-page="rbxplus"
+            onclick="event.preventDefault();navigateTo('rbxplus')">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/038/598/430/small/3d-plus-icon-gold-3d-illustration-png.png"
+              style="width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin-right:3px" alt="RBX+">
+            RBX+
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <!-- Descargar -->
+      <a href="#/descarga" class="nav-link nav-link-download" data-page="descarga"
+        onclick="event.preventDefault();navigateTo('descarga')" style="display:inline-flex;align-items:center;gap:4px;text-decoration:none">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <span data-i18n="nav_download">Descargar</span>
+      </a>
+
+      <!-- Buscar -->
+      <div id="searchContainer">
+        <button id="searchIcon" aria-label="Buscar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </button>
+        <input type="text" id="searchInput" placeholder="Buscar títulos, géneros..." data-i18n-placeholder="search_placeholder">
+        <div id="searchDropdown"></div>
+        <button id="searchAdvancedLink" onclick="event.stopPropagation();document.getElementById('searchContainer').classList.remove('open');navigateTo('search')">
+          🔍 Búsqueda avanzada — filtrar por género, año y duración
+        </button>
+      </div>
+
+      <!-- Perfil -->
+      <div class="nav-profile">
+        <img id="profileAvatarNav" src="resources/avatars/avatar1.png" alt="Perfil">
+        <span id="profileNameNav"></span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.4"><path d="M7 10l5 5 5-5z"/></svg>
+        <div class="profile-dropdown">
+          <div class="pd-item" onclick="showProfileSelector()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span data-i18n="pd_switch_profile">Cambiar perfil</span>
+          </div>
+          <div class="pd-item" onclick="navigateTo('mynetflix')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+            Mi lista
+          </div>
+          <div class="pd-item" onclick="navigateTo('downloads')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Mis descargas
+          </div>
+          <div class="pd-item" onclick="openVantaChat()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h2v-8H5v-1a7 7 0 0 1 14 0v1h-2v8h2c1.1 0 2-.9 2-2V11a9 9 0 0 0-9-9zm-1 12h2v2h-2v-2z"/></svg>
+            Vanta Cineworks
+          </div>
+          <div class="pd-item" onclick="openSettingsModal()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+            Ajustes
+          </div>
+          <div class="pd-divider"></div>
+          <div class="pd-item danger" onclick="handleLogout()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+            <span data-i18n="pd_logout">Cerrar sesión</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ADS STRIP -->
+  <div id="adsStrip" style="display:none"></div>
+
+  <!-- APP CONTENT -->
+  <div id="appContent"></div>
+
+  <footer>
+    <img src="https://raw.githubusercontent.com/ikerana35018santanaiker-source/RBX-Infinity/refs/heads/main/resources/some%20images/1F452206-FCFC-4237-AF61-C3239AAEC3BE.jpg" alt="RBX Infinity">
+    <span>© 2026 RBX Infinity's Studio. Todos los derechos reservados.</span>
+  </footer>
+
+</div>
+
+<!-- ─── MODALS / PLAYER / TOASTS ──────────────────────────────────────────── -->
+<div id="contentModal"></div>
+<div id="videoPlayer"></div>
+<div id="toastContainer"></div>
+
+<script type="module" src="js/app.js"></script>
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar')?.classList.toggle('scrolled', window.scrollY > 50);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (document.getElementById('videoPlayer')?.style.display === 'flex') closePlayer?.();
+      else if (document.getElementById('contentModal')?.style.display === 'flex') closeModal?.();
+    }
+  });
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const ov = document.getElementById('loadingOverlay');
+      if (ov) { ov.style.opacity = '0'; setTimeout(() => ov.style.display = 'none', 400); }
+    }, 1200);
+  });
+
+  // Auth tab helper
+  window.switchAuthTab = (tabId) => {
+    document.querySelectorAll('.auth-tab').forEach(t => t.style.display = 'none');
+    const el = document.getElementById(tabId);
+    if (el) { el.style.display = 'block'; el.classList.add('tab-enter'); setTimeout(() => el.classList.remove('tab-enter'), 400); }
+  };
+
+  // Password visibility toggle
+  window.togglePwd = (inputId, btn) => {
+    const inp = document.getElementById(inputId);
+    if (!inp) return;
+    const isText = inp.type === 'text';
+    inp.type = isText ? 'password' : 'text';
+    btn.textContent = isText ? '👁' : '🙈';
+  };
+</script>
+
+<script>
+  // ─── INTRO VIDEO LOGIC ──────────────────────────────────────────────────────
+  (function() {
+    // Only show intro once per session
+
+    const video = document.getElementById('introVideo');
+    const skipBtn = document.getElementById('introSkipBtn');
+
+    video.addEventListener("click", () => {
+  video.muted = false;
+});
+
+    // Intentar reproducir el video
+    video.play().catch(e => {
+      console.log("Error al reproducir video:", e);
+      finishIntro(); // Si falla, saltar intro
+    });
+
+    // Show skip button after 1.5s
+    setTimeout(() => skipBtn?.classList.add('visible'), 1500);
+
+    // Auto-finish when video ends
+    video?.addEventListener('ended', function() {
+      finishIntro();
+    });
+
+    // Si el video tiene error, saltar intro también
+    video?.addEventListener('error', function() {
+      console.log("Error en el video, saltando intro");
+      finishIntro();
+    });
+  })();
+
+  window.finishIntro = function() {
+    // Evitar ejecución múltiple
+    if (window._introFinished) return;
+    window._introFinished = true;
+    
+    const screen = document.getElementById('introScreen');
+    if (!screen || screen.classList.contains('hidden')) return;
+    
+    screen.classList.add('fade-out');
+    setTimeout(() => {
+      screen.classList.add('hidden');
+      // Reveal profile screen with smooth animation if it's visible
+      const profileScreen = document.getElementById('profileSelectScreen');
+      if (profileScreen && profileScreen.style.display !== 'none') {
+        profileScreen.classList.add('intro-reveal');
+      }
+    }, 650);
+  };
+
+  window.skipIntroFallback = function() {
+    // Video failed to load — skip silently
+    finishIntro();
+  };
+</script>
+
+</body>
+</html>
