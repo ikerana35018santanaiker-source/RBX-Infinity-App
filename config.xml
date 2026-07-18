@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:tizen="http://tizen.org/ns/widgets"
+        id="https://rbx.infinity"
+        version="1.0.0"
+        viewmodes="fullscreen">
+
+  <tizen:application id="RBXInfinity.App"
+                     package="RBXInfinity"
+                     required_version="3.0"/>
+
+  <content src="index.html"/>
+
+  <icon src="icon.png"/>
+
+  <name>RBX Infinity</name>
+  <description>Plataforma de streaming de películas y series inspiradas en Roblox</description>
+
+  <!-- Tizen TV permissions -->
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.display"/>
+  <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+
+  <!-- Allow all origins (APIs / JSON / CDN) -->
+  <access origin="*" subdomains="true"/>
+
+  <!-- TV configuration -->
+  <tizen:setting screen-orientation="landscape"
+                 context-menu="disable"
+                 background-support="disable"
+                 encryption="disable"
+                 install-location="auto"
+                 hwkey-event="enable"/>
+
+  <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+
+</widget>

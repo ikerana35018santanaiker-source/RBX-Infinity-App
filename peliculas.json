@@ -1,0 +1,825 @@
+{
+  "categorias_home": [
+    "nuevo",
+    "destacado",
+    "top10",
+    "proximamente"
+  ],
+  "banners": [
+    {
+      "id": "banner1",
+      "titulo": "MICHAEL - LA HISTORIA DEL REY-SPHERE",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "La impactante historia del misterioso Rey-Sphere. Secretos oscuros, traiciones y un poder capaz de cambiar el destino del mundo.",
+      "poster": "https://i.ibb.co/W4yZ4pbP/IMG-8052.png",
+      "banner": null,
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2029,
+      "genero": "Suspenso",
+      "rating": "NR",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "xcine_studios"
+    },
+    {
+      "id": "banner2",
+      "titulo": "IT BROOKHAVEN MOVIE - NI LA CRUZ TE SALVA",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "El terror llega a Brookhaven cuando una presencia maldita comienza a perseguir a sus habitantes. Nadie está seguro... ni la cruz te salva.",
+      "poster": "https://i.ibb.co/s95n7FLy/IMG-8051.png",
+      "banner": null,
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror",
+      "rating": "NR",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "sphere"
+    },
+    {
+      "id": "banner3",
+      "titulo": "INSIDIOUS PRIMER-CONTACTÓ",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "Una perturbadora conexión entre dimensiones desata entidades desconocidas. El primer contacto podría ser el último.",
+      "poster": "https://i.ibb.co/Psqth0CB/IMG-8050.png",
+      "banner": "https://i.ibb.co/VYVBSBMx/435-sin-titulo-20260524113304.png",
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "trailers": [
+  { "titulo": "Tráiler Oficial",   "url": "https://www.image2url.com/r2/default/videos/1779635375841-eadedb6f-ea87-4e7a-8de0-dbc4a27b82a3.mp4" },
+  { "titulo": "Tráiler Extendido", "url": "https://videotourl.com/videos/1780313730389-bd9331b2-2453-4ce2-9e51-59fd100dd329.mov" }
+      ],
+      "año": 2027,
+      "genero": "Terror",
+      "rating": "NR",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "próximamente"
+      ],
+      "studio": "empire_studios"
+    },
+    {
+      "id": "banner6",
+      "titulo": "Terrifier the Warning",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "El payaso Art regresa más brutal que nunca. Una advertencia para los que se atrevan a mirarlo.",
+      "poster": "https://i.ibb.co/Wr7vHNz/poster-4.png",
+      "banner": null,
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+17 Años",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "xcine_studios"
+    },
+    {
+      "id": "banner7",
+      "titulo": "Killer Book Club",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "Un club de lectura de terror se convierte en la pesadilla más real de sus miembros cuando alguien empieza a matar siguiendo las reglas de sus libros favoritos.",
+      "poster": "https://i.ibb.co/SwrfPQXk/IMG-8135.png",
+      "banner": null,
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+9 Años",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "xcine_studios"
+    },
+    {
+      "id": "banner8",
+      "titulo": "Final Exam",
+      "subtitulo": "PELÍCULA",
+      "descripcion": "El último examen se convierte en una lucha por la supervivencia cuando un asesino desconocido acecha el campus.",
+      "poster": "https://i.ibb.co/8LcY7RgW/IMG-8134.png",
+      "banner": null,
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+15 Años",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "r24"
+    },
+    {
+      "id": "banner9",
+      "titulo": "CONSUMIDO",
+      "subtitulo": "SERIE",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/xS88QfP7/448-sin-titulo-20260530191334.png",
+      "banner": "https://i.ibb.co/v4x9rKht/Gemini-Generated-Image-brwg8dbrwg8dbrwg.jpg",
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": "https://www.image2url.com/r2/default/videos/1780207081919-302e27df-c914-4d81-bdf0-c27afa7bdd28.mov",
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "Todas las Edades",
+      "duracion": "Desconocida",
+      "tipo": "serie",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "box_tv"
+    },
+    {
+      "id": "banner10",
+      "titulo": "Sonríe el Testigo",
+      "subtitulo": "PELÍCULA",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/8LHX3Sm8/7f22c951-0a6e-4ff7-b356-aa1eecda52ec.jpg",
+      "banner": "https://i.ibb.co/4ZCY4SYy/1000013580.png",
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+18 Años",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "black_signal"
+    },
+    {
+      "id": "banner11",
+      "titulo": "La Hora de la Desaparición",
+      "subtitulo": "PELÍCULA",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/ks7K9hcT/IMG-8182.png",
+      "banner": "https://i.ibb.co/1hSMyM1/1000013581.png",
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+16 Años",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "black_signal"
+    },
+    {
+      "id": "banner12",
+      "titulo": "Destino Final",
+      "subtitulo": "PELÍCULA",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/HLn6R0kr/IMG-8183.png",
+      "banner": "https://i.ibb.co/fVTJzdCD/1000013582.png",
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+18 Años",
+      "duracion": "Desconocida",
+      "tipo": "pelicula",
+      "categorias": [
+        "proximamente"
+      ],
+      "studio": "black_signal"
+    },
+    {
+      "id": "banner13",
+      "titulo": "El Antiguo Teléfono",
+      "subtitulo": "PELÍCULA",
+      "descripcion": null,
+      "banner": "https://i.ibb.co/Xkr5rLpc/e0293c96-aac8-4e57-8ce7-9643f12e9bd1.jpg",
+      "poster": "https://i.ibb.co/PGvQYSJP/poster-6.png",
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+18 Años",
+      "duracion": "Desconocida",
+      "tipo": "Película",
+    "categorias": [
+        "proximamente"
+      ],
+      "studio": "scary_horror"
+    },
+    {
+      "id": "banner14",
+      "titulo": "Primate",
+      "subtitulo": "PELÍCULA",
+      "descripcion": null,
+      "banner": "https://i.ibb.co/TMTzj4p2/IMG-8322.png",
+      "poster": "https://i.ibb.co/TMTzj4p2/IMG-8322.png",
+      "trailer": null,
+      "año": 2027,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+18 Años",
+      "duracion": "Desconocida",
+      "tipo": "Película",
+    "categorias": [
+        "proximamente"
+      ],
+      "studio": "scary_horror"
+    }
+  ],
+  "peliculas": [
+    {
+      "id": "peli_final_destination",
+      "titulo": "Final Destination",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/rGTZSMJK/IMG-8321.png",
+      "banner": null,
+      "logo": null,
+      "free": true,
+      "trailer": null,
+      "video": "https://youtu.be/CsOyuwuP7AY?si=-wG0PajHQNuFibuY",
+      "fecha": "2026-05-22T00:00:00",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 4,
+      "genero": "Terror",
+      "rating": "+18 Años",
+      "tipo": "pelicula",
+      "etiqueta": "¡Ahora Disponible!"
+    },
+    {
+      "id": "peli_insidious",
+      "titulo": "INSIDIOUS PRIMER-CONTACTO",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/Psqth0CB/IMG-8050.png",
+      "banner": "https://i.ibb.co/VYVBSBMx/435-sin-titulo-20260524113304.png",
+      "logo": null,
+      "free": true,
+      "trailer": null,
+      "fecha": "2026-06-11T22:00:00",
+      "video": "https://ia902900.us.archive.org/34/items/insidious-primer-contacto-roblox-2026_202606/Insidious%20Primer%20Contacto%20_%20Roblox%20_%202026.mp4",
+      "subtitles": [
+        { "label": "Español", "src": "resources/substitles/insidious primer contacto/es.srt", "srclang": "es" },
+        { "label": "English", "src": "resources/substitles/insidious primer contacto/en.srt", "srclang": "en" },
+        { "label": "Français", "src": "resources/substitles/insidious primer contacto/fr.srt", "srclang": "fr" },
+        { "label": "Deutsch", "src": "resources/substitles/insidious primer contacto/de.srt", "srclang": "de" },
+        { "label": "日本語", "src": "resources/substitles/insidious primer contacto/ja.srt", "srclang": "ja" },
+        { "label": "แบบไทย", "src": "resources/substitles/insidious primer contacto/th.srt", "srclang": "th" }
+      ],
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "genero": "Terror",
+      "rating": "+16 Años",
+      "tipo": "pelicula",
+      "etiqueta": "¡Ahora Disponible!"
+    },
+    {
+      "id": "the bloxverse",
+      "titulo": "The Bloxverse",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/XxqB8jWL/Sin-t-tulo.jpg",
+      "banner": "https://i.ibb.co/dsvTbHgt/1000019114.png",
+      "logo": null,
+      "free": true,
+      "trailer": null,
+      "fecha": "2026-06-25T19:00:00",
+      "video": "https://youtu.be/HtzfZ9m2adQ?is=cFmQkwWcggrDqVXW",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "genero": "Terror",
+      "rating": "+14 Años",
+      "tipo": "pelicula",
+      "etiqueta": "¡Ahora Disponible!",
+      "studio": "iker_studio"
+    },
+    {
+      "id": "break in 2",
+      "titulo": "Break In 2: The Secret Ending",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/23Rqwdry/no-Filter.jpg",
+      "banner": "https://i.ibb.co/23Rqwdry/no-Filter.jpg",
+      "logo": null,
+      "free": true,
+      "trailer": null,
+      "fecha": "2026-06-25T19:00:00",
+      "video": "https://youtu.be/m6YX2cAg7XU",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "genero": "Misterio",
+      "rating": "+9 Años",
+      "tipo": "pelicula",
+      "etiqueta": "¡Ahora Disponible!",
+      "studio": "iker_studio"
+    }
+  ],
+  "series": [
+    {
+      "id": "serie_1",
+      "titulo": "SLUMBER PARTY MASSACRE",
+      "descripcion": "Una noche de fiesta se convierte en una pesadilla cuando las invitadas descubren que no están solas en la cabaña.",
+      "poster": "https://i.ibb.co/9HKyQcTd/poster.png",
+      "banner": null,
+      "logo": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+16 Años",
+      "tipo": "serie",
+      "etiqueta": "1 Junio 2026",
+      "destacado": true,
+      "free": true,
+      "nuevo": true,
+      "top10": 2,
+      "temporadas": [
+        {
+          "numero": 1,
+          "titulo": "Temporada 1",
+          "episodios": [
+            {
+              "numero": 1,
+              "titulo": "Episodio 1",
+              "descripcion": null,
+              "duracion": "4 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781848725723-55b176f0-e968-4ec3-9699-17d36275ae83.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Slumber Party Massacre/es_ep1.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Slumber Party Massacre/en_ep1.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 2,
+              "titulo": "Episodio 2",
+              "descripcion": null,
+              "duracion": "3 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781849082900-eea87128-e4ab-4572-8a96-3668b1575e54.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Slumber Party Massacre/es_ep2.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Slumber Party Massacre/en_ep2.srt", "srclang": "en" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie_2",
+      "titulo": "El Teléfono Antiguo",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/PGvQYSJP/poster-6.png",
+      "banner": "https://i.ibb.co/Xkr5rLpc/e0293c96-aac8-4e57-8ce7-9643f12e9bd1.jpg",
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+12 Años",
+      "tipo": "serie",
+      "free": true,
+      "etiqueta": "9 Junio 2026",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "temporadas": [
+        {
+          "numero": 1,
+          "titulo": "Temporada 1",
+          "episodios": [
+            {
+              "numero": 1,
+              "titulo": "Episodio 1",
+              "descripcion": null,
+              "duracion": "6 min",
+              "thumbnail": "https://i.ibb.co/VcPdv22J/Screenshot-20260607-080956-Chrome.jpg",
+              "video": "https://videotourl.com/videos/1780766784895-85bb71f3-630a-464c-9001-50098dbee199.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/El Antiguo Teléfono/es_ep1.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/El Antiguo Teléfono/en_ep1.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 2,
+              "titulo": "Episodio 2",
+              "descripcion": null,
+              "duracion": "3 min",
+              "thumbnail": "https://i.ibb.co/3yf34c71/Screenshot-20260607-080937-Chrome.jpg",
+              "video": "https://videotourl.com/videos/1780766741098-2e6fd4c2-a182-4169-a317-aae9c75af781.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/El Antiguo Teléfono/es_ep2.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/El Antiguo Teléfono/en_ep2.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 3,
+              "titulo": "Episodio 3",
+              "descripcion": "El equipo recibe una llamada de auxilio desde una mansión abandonada. Lo que encuentran allí desafía toda lógica.",
+              "duracion": "1 min",
+              "thumbnail": "https://i.ibb.co/dJ0nZfGZ/Screenshot-20260607-080900-Chrome.jpg",
+              "video": "https://www.image2url.com/r2/default/videos/1780729461967-9685e7e6-70ec-444d-af49-0fc2f2f02c5f.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/El Antiguo Teléfono/es_ep3.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/El Antiguo Teléfono/en_ep3.srt", "srclang": "en" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie_3",
+      "titulo": "Garten of Banban Roblox",
+      "descripcion": "Enter Banban's Kindergarten, and you're sure to make some friends. Explore the mysterious establishment and don't lose your life and sanity. Uncover the horrifying truth behind the place, but be careful, as you are far from alone… Here, in ROBLOX.",
+      "poster": "https://i.ibb.co/hRMNc3nV/Dise-o-sin-t-tulo-2.jpg",
+      "banner": null,
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "video": null,
+      "año": 2026,
+      "genero": "Terror · Misterio",
+      "rating": "+15 Años",
+      "tipo": "serie",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 6,
+      "categorias": [
+        "Terror",
+        "Misterio",
+        "Sobrenatural"
+      ],
+      "temporadas": [
+        {
+          "numero": 1,
+          "titulo": "Enter Into The Kindergarten",
+          "episodios": [
+            {
+              "numero": 1,
+              "titulo": "Going To The Kindergarten",
+              "descripcion": "La madre, asustada con las noticas sobre los acontecimientos del kindergarten, va allí.",
+              "duracion": "1 min",
+              "thumbnail": "https://i.ibb.co/0yVKRh4q/Dise-o-sin-t-tulo-3.jpg",
+              "video": "https://www.youtube.com/watch?v=TXH254Ydgns"
+            },
+            {
+              "numero": 2,
+              "titulo": "Welcome To The Kindergarten",
+              "descripcion": "La madre, asustada con las noticas sobre los acontecimientos del kindergarten, va allí a descubir los misterios sobre el kindergarten y sus mascotas.",
+              "duracion": "48 min",
+              "thumbnail": "https://i.ibb.co/PsFNyDmm/Dise-o-sin-t-tulo-4.jpg",
+              "video": "https://youtu.be/OU9Nnlee7GY",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Garten of Banban/Season 1/es_ep2.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Garten of Banban/Season 1/en_ep2.srt", "srclang": "en" }
+              ]
+            }
+          ]
+        }
+      ],
+      "studio": "iker_studio"
+    },
+    {
+      "id": "serie_4",
+      "titulo": "Backrooms Brookhaven",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/9H196WLW/IMG-8328.png",
+      "banner": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+12 Años",
+      "tipo": "serie",
+      "free": true,
+      "etiqueta": "9 Junio 2026",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "studio": "sphere",
+      "temporadas": [
+        {
+          "numero": 1,
+          "titulo": "Temporada 1",
+          "episodios": [
+            {
+              "numero": 1,
+              "titulo": "El Complejo",
+              "descripcion": null,
+              "duracion": "20 min",
+              "thumbnail": "https://i.ibb.co/LwHJ5TX/VEv-Xq6-Wdfdo-HD.jpg",
+              "video": "https://ia902807.us.archive.org/35/items/wekjnrffjn/BACKROOMS%20BROOKHAVEN%20SERIE%20CAPITULO%201%20%28REMAKE%29%20EL%20COMPLEJO-SPHERE%20🌐%20-%20SPHERE%20🌐%20%281080p%2C%20h264%29.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Backrooms Brookhaven/es_ep1.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Backrooms Brookhaven/en_ep1.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 2,
+              "titulo": "Diversión",
+              "descripcion": null,
+              "duracion": "11 min",
+              "thumbnail": "https://i.ibb.co/XZcsgSKk/qi-T636-Sqp-AI-HD.jpg",
+              "video": "https://videotourl.com/videos/1781535961682-19d92ad7-9667-4fea-91cb-33ced179252f.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Backrooms Brookhaven/es_ep2.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Backrooms Brookhaven/en_ep2.srt", "srclang": "en" },
+                { "label": "Français", "src": "resources/substitles/Backrooms Brookhaven/fr_ep2.srt", "srclang": "fr" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie_5",
+      "titulo": "Primate",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/934nQ0mm/IMG-8560.png",
+      "banner": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+18 Años",
+      "tipo": "serie",
+      "free": true,
+      "etiqueta": "19 Junio 2026",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "studio": "cherry_horror",
+      "temporadas": [
+        {
+          "numero": 1,
+          "titulo": "Temporada 1",
+          "episodios": [
+            {
+              "numero": 1,
+              "titulo": "Episodio 1",
+              "descripcion": null,
+              "duracion": "4 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781846793466-c98799ba-ff26-4f22-bbe1-7bc2dd416248.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Primate/es_ep1.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Primate/en_ep1.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 2,
+              "titulo": "Episodio 2",
+              "descripcion": null,
+              "duracion": "11 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781847107210-4e992b43-610c-470a-bf65-840942516917.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Primate/es_ep2.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Primate/en_ep2.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 3,
+              "titulo": "Episodio 3",
+              "descripcion": null,
+              "duracion": "1 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781847482315-b0f355b3-2ffc-44cb-a036-fcde53be07b6.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Primate/es_ep3.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Primate/en_ep3.srt", "srclang": "en" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serie_6",
+      "titulo": "Terrifier",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/FbGY77Bj/IMG-8562.png",
+      "banner": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+18 Años",
+      "tipo": "serie",
+      "free": true,
+      "etiqueta": "19 Junio 2026",
+      "destacado": true,
+      "nuevo": true,
+      "top10": 1,
+      "temporadas": [
+        {
+          "numero": 1,
+          "titulo": "Temporada 1",
+          "episodios": [
+            {
+              "numero": 1,
+              "titulo": "Episodio 1",
+              "descripcion": null,
+              "duracion": "2 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781849567804-db66b7d2-a12a-44f4-a056-2b4d277cb9bf.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Terrifier/es_ep1.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Terrifier/en_ep1.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 2,
+              "titulo": "Episodio 2",
+              "descripcion": null,
+              "duracion": "5 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781849552703-4a180e1c-4956-418c-bc5c-f6975ddca27f.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Terrifier/es_ep2.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Terrifier/en_ep2.srt", "srclang": "en" }
+              ]
+            },
+            {
+              "numero": 3,
+              "titulo": "Episodio 3",
+              "descripcion": "El equipo recibe una llamada de auxilio desde una mansión abandonada. Lo que encuentran allí desafía toda lógica.",
+              "duracion": "5 min",
+              "thumbnail": null,
+              "video": "https://videotourl.com/videos/1781849559739-7c9bcc1e-e4ab-4469-a009-7212748fb801.mp4",
+              "subtitles": [
+  { "label": "Español", "src": "resources/substitles/Terrifier/es_ep3.srt", "srclang": "es" },
+  { "label": "English", "src": "resources/substitles/Terrifier/en_ep3.srt", "srclang": "en" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "proximamente": [
+    {
+      "id": "up1",
+      "titulo": "MICHAEL - LA HISTORIA DEL REY-SPHERE",
+      "descripcion": "La impactante historia del misterioso Rey-Sphere. Secretos oscuros, traiciones y un poder capaz de cambiar el destino del mundo.",
+      "poster": "https://i.ibb.co/W4yZ4pbP/IMG-8052.png",
+      "banner": null,
+      "logo": null,
+      "trailer": null,
+      "fecha": "2029-01-01T00:00:00",
+      "genero": "Suspenso",
+      "rating": "NR",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente"
+    },
+    {
+      "id": "up2",
+      "titulo": "IT BROOKHAVEN MOVIE - NI LA CRUZ TE SALVA",
+      "descripcion": "El terror llega a Brookhaven cuando una presencia maldita comienza a perseguir a sus habitantes. Nadie está seguro... ni la cruz te salva.",
+      "poster": "https://i.ibb.co/s95n7FLy/IMG-8051.png",
+      "banner": null,
+      "logo": null,
+      "trailer": null,
+      "fecha": "2026-09-22T00:00:00",
+      "genero": "Terror",
+      "rating": "NR",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente"
+    },
+    {
+      "id": "up7",
+      "titulo": "Killer Book Club",
+      "descripcion": "Un club de lectura de terror se convierte en la pesadilla más real de sus miembros.",
+      "poster": "https://i.ibb.co/SwrfPQXk/IMG-8135.png",
+      "banner": null,
+      "logo": null,
+      "trailer": null,
+      "fecha": "2027-06-09T00:00:00",
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+9 Años",
+      "tipo": "pelicula",
+      "etiqueta": "9 Junio 2027"
+    },
+    {
+      "id": "up8",
+      "titulo": "Final Exam",
+      "descripcion": "El último examen se convierte en una lucha por la supervivencia cuando un asesino acecha el campus.",
+      "poster": "https://i.ibb.co/8LcY7RgW/IMG-8134.png",
+      "banner": null,
+      "logo": null,
+      "trailer": null,
+      "fecha": "2027-06-09T00:00:00",
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+15 Años",
+      "tipo": "pelicula",
+      "etiqueta": "9 Junio 2027"
+    },
+    {
+      "id": "up9",
+      "titulo": "CONSUMIDO",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/xS88QfP7/448-sin-titulo-20260530191334.png",
+      "banner": "https://i.ibb.co/v4x9rKht/Gemini-Generated-Image-brwg8dbrwg8dbrwg.jpg",
+      "logo": null,
+      "trailer": "https://www.image2url.com/r2/default/videos/1780207081919-302e27df-c914-4d81-bdf0-c27afa7bdd28.mov",
+      "fecha": "2027-06-09T00:00:00",
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+15 Años",
+      "tipo": "serie",
+      "etiqueta": "2027",
+      "studio": "box_tv"
+    },
+    {
+      "id": "up10",
+      "titulo": "Sonríe el Testigo",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/8LHX3Sm8/7f22c951-0a6e-4ff7-b356-aa1eecda52ec.jpg",
+      "banner": "https://i.ibb.co/4ZCY4SYy/1000013580.png",
+      "logo": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+15 Años",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente",
+      "studio": "black_signal"
+    },
+    {
+      "id": "up11",
+      "titulo": "La Hora de la Desaparición",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/fVTJzdCD/1000013582.png",
+      "banner": "https://i.ibb.co/1hSMyM1/1000013581.png",
+      "logo": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+15 Años",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente",
+      "studio": "black_signal"
+    },
+    {
+      "id": "up12",
+      "titulo": "Destino Final",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/HLn6R0kr/IMG-8183.png",
+      "banner": "https://i.ibb.co/fVTJzdCD/1000013582.png",
+      "logo": null,
+      "trailer": null,
+      "fecha": null,
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+15 Años",
+      "tipo": "pelicula",
+      "etiqueta": "Próximamente",
+      "studio": "black_signal"
+    },
+    {
+      "id": "up13",
+      "titulo": "HALLOWEEN THE BOOGEYΜΑΝ",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/gMFQ0fxn/IMG-8561.png",
+      "banner": null,
+      "logo": null,
+      "trailer": null,
+      "fecha": "2026-08-01T00:00:00",
+      "genero": "Terror · Ciencia Ficción",
+      "rating": "+16 Años",
+      "tipo": "pelicula",
+      "etiqueta": "Agosto 1",
+      "studio": "empire_studios"
+    },
+    {
+      "id": "up14",
+      "titulo": "Karol G: Mañana fué muy bonito",
+      "descripcion": null,
+      "poster": "https://i.ibb.co/wrWbk2zW/ca9f9f37-9d35-4cc9-ad06-fca879f8ae0b.jpg",
+      "banner": "https://i.ibb.co/Y4xM9zRm/f8c0a6fc-650b-4459-b2b4-92a0ee5bb992.jpg",
+      "logo": null,
+      "trailer": null,
+      "fecha": "2026-08-08T00:00:00",
+      "genero": "Documental",
+      "rating": "+14 Años",
+      "tipo": "pelicula",
+      "etiqueta": "Agosto 8",
+      "studio": "empire_studios"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "rbxinfinity_studio",
+    "nombre": "RBX Infinity Studio",
+    "logo": "https://i.ibb.co/wNhs5YBC/1000013504.jpg",
+    "descripcion": "El estudio original de RBX Infinity. Producciones propias de terror, suspenso y ciencia ficción.",
+    "color": "#1a7fff"
+  },
+  {
+    "id": "empire_studios",
+    "nombre": "Empire Studios",
+    "logo": "https://plain-weur-prod-public.komododecks.com/202605/29/7CSz3asRHvTbDlzd8d1d/image.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "box_tv",
+    "nombre": "Box",
+    "logo": "https://i.ibb.co/60S3C5Hk/A-adir-un-t-tulo.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "sphere",
+    "nombre": "Sphere",
+    "logo": "https://i.ibb.co/HmNZd23/1000013138.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "rbxflix",
+    "nombre": "RBXFlix",
+    "logo": "https://plain-weur-prod-public.komododecks.com/202605/29/EH6SBk1d7C7l54U8KUGM/image.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "faceblox",
+    "nombre": "Faceblox",
+    "logo": "https://plain-weur-prod-public.komododecks.com/202605/29/loVX5pJxNiycY4SzgtUL/image.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "slash_hunt",
+    "nombre": "Slash Hunt",
+    "logo": "https://i.ibb.co/mCdXVyVQ/A-adir-un-t-tulo-6.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "blor_bloof",
+    "nombre": "Blor Bloof",
+    "logo": "https://i.ibb.co/YFS8Gypq/A-adir-un-t-tulo-5.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "r24",
+    "nombre": "R24",
+    "logo": "https://i.ibb.co/5hzDs0pf/A-adir-un-t-tulo-7.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "black_signal",
+    "nombre": "Black Signal",
+    "logo": "https://i.ibb.co/5xfGnHMy/A-adir-un-t-tulo.jpg",
+    "descripcion": "UNA ESTUDIO DE PELÍCULAS CON MEDIO MILLÓN DE SEGUIDORES",
+    "color": null
+  },
+  {
+    "id": "cherry_horror",
+    "nombre": "Cherry Horror",
+    "logo": "https://i.ibb.co/VcdKrkv0/A-adir-un-t-tulo.jpg",
+    "descripcion": null,
+    "color": null
+  },
+  {
+    "id": "iker_studio",
+    "nombre": "Iker' Studio",
+    "logo": "https://i.ibb.co/1t5XRFNN/A-adir-un-t-tulo.jpg",
+    "descripcion": null,
+    "color": null
+  }
+]

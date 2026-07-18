@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ad1",
+    "imagen": "https://i.ibb.co/Fb9655JB/437-sin-titulo-20260524131454.png",
+    "url": "https://rbxinfinity.netlify.app/collabwithus.html",
+    "video": "https://videotourl.com/videos/1780814923961-475117c0-d94b-4d1d-bac2-6d0e05042a01.mp4",
+    "titulo": "Ellos ya colaboran con nosotros y tú, ¿a que esperas?",
+    "activo": true
+  },
+  {
+    "id": "ad2",
+    "imagen": "https://i.ibb.co/5xkbKX54/1000012695.jpg",
+    "url": "https://rbxinfinity.netlify.app/",
+    "video": null,
+    "titulo": "¡Página Web Oficial Ya Disponible!",
+    "activo": true
+  },
+  {
+    "id": "ad3",
+    "imagen": "https://i.ibb.co/6Cy4Kpv/1000013532.png",
+    "url": "https://rbxinfinity.netlify.app/#/insidious-primer-contacto",
+    "video": null,
+    "titulo": "Trailer de Insidious Ya en XCine",
+    "activo": true
+  }
+]

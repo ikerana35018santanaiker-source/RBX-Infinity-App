@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "nombre": "RBX Infinity 1.0.0",
+  "fecha": "2026-06-01",
+  "notas": null,
+  "archivos": {
+    "windows": "RBX.Infinity.exe",
+    "android": "Android.apk",
+    "linux": "Linux.AppImage",
+    "macos": "RBX.Infinity.dmg"
+  }
+}

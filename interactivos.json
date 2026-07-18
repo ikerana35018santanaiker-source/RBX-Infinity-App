@@ -1,0 +1,113 @@
+{
+  "interactivos": [
+    {
+      "id": "int_la_decision",
+      "titulo": "La Última Decisión",
+      "descripcion": "Una noche, una llamada, tres caminos. Tú decides cómo termina la historia.",
+      "poster": "https://i.ibb.co/PLACEHOLDER/poster-la-decision.png",
+      "banner": "https://i.ibb.co/PLACEHOLDER/banner-la-decision.png",
+      "logo": null,
+      "bannerLogo": null,
+      "trailer": null,
+      "año": 2027,
+      "genero": "Suspenso · Interactivo",
+      "rating": "+15 Años",
+      "duracion": "Variable",
+      "tipo": "interactivo",
+      "destacado": true,
+      "nuevo": true,
+      "categorias": ["Interactivo", "Suspenso"],
+      "studio": "xcine_studios",
+
+      "videoInicial": "v_intro",
+
+      "videos": [
+        {
+          "id": "v_intro",
+          "titulo": "El comienzo",
+          "url": "https://example.com/videos/la_decision/intro.mp4",
+          "subtitulos": [
+            { "idioma": "Español", "codigo": "es", "url": "https://example.com/subs/la_decision/intro_es.vtt" },
+            { "idioma": "English", "codigo": "en", "url": "https://example.com/subs/la_decision/intro_en.vtt" }
+          ],
+          "audiotracks": [
+            { "idioma": "Español (Latino)", "codigo": "es-LA", "url": "https://example.com/audio/la_decision/intro_es_la.mp3" },
+            { "idioma": "English", "codigo": "en", "url": "https://example.com/audio/la_decision/intro_en.mp3" }
+          ],
+          "muerte": false,
+          "final": false,
+          "botones": [
+            { "id": "btn_responder", "texto": "Responder la llamada", "videoDestino": "v_responde" },
+            { "id": "btn_ignorar",   "texto": "Ignorar y colgar",     "videoDestino": "v_ignora" }
+          ]
+        },
+        {
+          "id": "v_responde",
+          "titulo": "Respondes la llamada",
+          "url": "https://example.com/videos/la_decision/responde.mp4",
+          "subtitulos": [
+            { "idioma": "Español", "codigo": "es", "url": "https://example.com/subs/la_decision/responde_es.vtt" }
+          ],
+          "audiotracks": [],
+          "muerte": false,
+          "final": false,
+          "botones": [
+            { "id": "btn_seguir_voz",  "texto": "Seguir la voz al sótano", "videoDestino": "v_sotano" },
+            { "id": "btn_colgar_ya",  "texto": "Colgar inmediatamente",    "videoDestino": "v_ignora" }
+          ]
+        },
+        {
+          "id": "v_ignora",
+          "titulo": "Cuelgas el teléfono",
+          "url": "https://example.com/videos/la_decision/ignora.mp4",
+          "subtitulos": [],
+          "audiotracks": [],
+          "muerte": false,
+          "final": false,
+          "botones": [
+            { "id": "btn_dormir",      "texto": "Intentar dormir",        "videoDestino": "v_final_paz" },
+            { "id": "btn_investigar",  "texto": "Investigar quién llamó", "videoDestino": "v_sotano" }
+          ]
+        },
+        {
+          "id": "v_sotano",
+          "titulo": "El sótano",
+          "url": "https://example.com/videos/la_decision/sotano.mp4",
+          "subtitulos": [
+            { "idioma": "Español", "codigo": "es", "url": "https://example.com/subs/la_decision/sotano_es.vtt" }
+          ],
+          "audiotracks": [],
+          "muerte": true,
+          "final": false,
+          "botones": []
+        },
+        {
+          "id": "v_final_paz",
+          "titulo": "Una noche tranquila",
+          "url": "https://example.com/videos/la_decision/final_paz.mp4",
+          "subtitulos": [],
+          "audiotracks": [],
+          "muerte": false,
+          "final": true,
+          "botones": []
+        }
+      ]
+    }
+  ],
+
+  "proximamente_interactivos": [
+    {
+      "id": "int_up_laberinto",
+      "titulo": "El Laberinto Sin Salida",
+      "descripcion": "Cada elección te acerca más a la verdad... o a la locura. Próximamente, el primer interactivo de terror psicológico de XCine.",
+      "poster": "https://i.ibb.co/PLACEHOLDER/poster-laberinto.png",
+      "banner": null,
+      "trailer": "https://example.com/videos/laberinto_trailer.mp4",
+      "fecha": "2027-10-31T00:00:00",
+      "genero": "Terror · Interactivo",
+      "rating": "+18 Años",
+      "tipo": "interactivo",
+      "etiqueta": "31 Octubre 2027"
+    }
+  ]
+}

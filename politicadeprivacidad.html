@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — RBX Infinity</title>
+  <link rel="icon" href="https://i.ibb.co/wNhs5YBC/1000013504.jpg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #00060f;
+      --bg-card:  #000d1f;
+      --border:   rgba(26,127,255,0.15);
+      --blue:     #1a7fff;
+      --blue-dim: rgba(26,127,255,0.12);
+      --text:     #e8eaf0;
+      --muted:    rgba(232,234,240,0.5);
+      --radius:   14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVBAR ─────────────────────────────────────────────────────────────── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; gap: 16px;
+      padding: 0 44px; height: 64px;
+      background: rgba(0,6,15,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { height: 34px; object-fit: contain; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--blue); text-decoration: none; font-size: .85rem;
+      font-weight: 600; transition: opacity .2s;
+    }
+    .nav-back:hover { opacity: .75; }
+    .nav-title {
+      flex: 1; text-align: right; font-size: .82rem;
+      color: var(--muted); font-weight: 500;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 110px 44px 52px;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(26,127,255,.1), transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { max-width: 760px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-dim); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 14px; margin-bottom: 18px;
+      font-size: .72rem; font-weight: 700; color: var(--blue);
+      letter-spacing: .5px; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800;
+      letter-spacing: -.5px; line-height: 1.2; margin-bottom: 14px;
+      color: var(--text);
+    }
+    .hero-meta {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      font-size: .8rem; color: var(--muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ─── LAYOUT ─────────────────────────────────────────────────────────────── */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 52px 44px 100px;
+    }
+
+    /* ─── TOC ────────────────────────────────────────────────────────────────── */
+    .toc {
+      position: sticky; top: 84px; align-self: start;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+    }
+    .toc-title {
+      font-size: .72rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .6px; margin-bottom: 14px;
+    }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .toc-list li a {
+      display: block; font-size: .82rem; color: var(--muted);
+      text-decoration: none; padding: 5px 8px; border-radius: 7px;
+      transition: all .18s;
+    }
+    .toc-list li a:hover { color: var(--text); background: var(--blue-dim); }
+    .toc-list li a.active { color: var(--blue); background: var(--blue-dim); font-weight: 600; }
+
+    /* ─── CONTENT ────────────────────────────────────────────────────────────── */
+    .content { min-width: 0; }
+
+    .pp-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 84px;
+    }
+
+    .section-num {
+      display: inline-block;
+      background: var(--blue-dim); border: 1px solid var(--border);
+      border-radius: 6px; padding: 2px 10px;
+      font-size: .7rem; font-weight: 800; color: var(--blue);
+      letter-spacing: .4px; margin-bottom: 10px;
+    }
+
+    .pp-section h2 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text);
+      margin-bottom: 16px; line-height: 1.3;
+    }
+
+    .pp-section p {
+      font-size: .91rem; color: var(--muted); margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .pp-section ul, .pp-section ol {
+      margin: 12px 0 18px 0; padding-left: 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .pp-section li {
+      font-size: .9rem; color: var(--muted);
+      display: flex; align-items: flex-start; gap: 10px;
+      line-height: 1.65;
+    }
+    .li-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0; margin-top: 8px;
+    }
+
+    /* Highlight box */
+    .pp-highlight {
+      background: var(--blue-dim); border: 1px solid var(--border);
+      border-left: 3px solid var(--blue); border-radius: var(--radius);
+      padding: 18px 22px; margin: 18px 0;
+      font-size: .88rem; color: var(--text); line-height: 1.75;
+    }
+    .pp-highlight strong { color: var(--blue); }
+
+    /* Warning box */
+    .pp-warn {
+      background: rgba(255,200,0,.06); border: 1px solid rgba(255,200,0,.2);
+      border-left: 3px solid #ffc800; border-radius: var(--radius);
+      padding: 16px 20px; margin: 16px 0;
+      font-size: .86rem; color: rgba(255,232,128,.85); line-height: 1.7;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 16px 0;
+      font-size: .84rem;
+    }
+    .data-table th {
+      background: rgba(26,127,255,.1); padding: 10px 14px;
+      text-align: left; font-weight: 700; color: var(--text);
+      border: 1px solid var(--border); font-size: .78rem;
+      letter-spacing: .3px; text-transform: uppercase;
+    }
+    .data-table td {
+      padding: 10px 14px; border: 1px solid rgba(255,255,255,.06);
+      color: var(--muted); vertical-align: top;
+    }
+    .data-table tr:hover td { background: rgba(255,255,255,.02); }
+
+    /* Divider */
+    .pp-divider {
+      height: 1px; background: var(--border); margin: 0 0 48px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 32px;
+      display: flex; align-items: flex-start; gap: 18px;
+    }
+    .contact-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--blue-dim); display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; font-size: 1.4rem;
+    }
+    .contact-info h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .contact-info p { font-size: .85rem; color: var(--muted); margin-bottom: 10px; }
+    .contact-info a {
+      color: var(--blue); font-weight: 600; text-decoration: none;
+      font-size: .85rem;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+    footer {
+      text-align: center; padding: 28px 44px;
+      border-top: 1px solid var(--border);
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+    footer img { height: 22px; opacity: .5; }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+    @media (max-width: 780px) {
+      .navbar { padding: 0 20px; }
+      .hero { padding: 96px 20px 40px; }
+      .layout { grid-template-columns: 1fr; padding: 32px 20px 80px; gap: 24px; }
+      .toc { position: static; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ──────────────────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <img class="nav-logo" src="https://i.ibb.co/wNhs5YBC/1000013504.jpg" alt="RBX Infinity">
+  <a class="nav-back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Volver a RBX Infinity
+  </a>
+  <span class="nav-title">Política de Privacidad</span>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      Documento legal
+    </div>
+    <h1>Política de Privacidad</h1>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+        Última actualización: 1 de junio de 2026
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Aplicable en todo el mundo
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAIN LAYOUT ──────────────────────────────────────────────────────────── -->
+<div class="layout">
+
+  <!-- TABLA DE CONTENIDOS -->
+  <aside class="toc">
+    <div class="toc-title">Contenido</div>
+    <ul class="toc-list">
+      <li><a href="#s1">1. Información que recopilamos</a></li>
+      <li><a href="#s2">2. Cómo usamos tu información</a></li>
+      <li><a href="#s3">3. Almacenamiento y seguridad</a></li>
+      <li><a href="#s4">4. Compartición de datos</a></li>
+      <li><a href="#s5">5. Tus derechos</a></li>
+      <li><a href="#s6">6. Cookies y tecnologías</a></li>
+      <li><a href="#s7">7. Menores de edad</a></li>
+      <li><a href="#s8">8. Cambios en la política</a></li>
+      <li><a href="#s9">9. Contacto</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="content">
+
+    <div class="pp-highlight">
+      <strong>Resumen sencillo:</strong> En RBX Infinity usamos tus datos únicamente para que la plataforma funcione — tu cuenta, tu lista, tu historial de visualización. No vendemos tus datos a nadie. Tú tienes el control de tu información en todo momento.
+    </div>
+
+    <div class="pp-divider"></div>
+
+    <!-- 1 -->
+    <section class="pp-section" id="s1">
+      <span class="section-num">01</span>
+      <h2>Información que recopilamos</h2>
+      <p>Cuando usas RBX Infinity recopilamos diferentes tipos de información según cómo interactúas con la plataforma:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tipo de dato</th>
+            <th>Cuándo se recopila</th>
+            <th>Obligatorio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dirección de correo electrónico</td>
+            <td>Al registrarse o iniciar sesión</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td>Nombre de usuario</td>
+            <td>Al crear la cuenta</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td>Contraseña (cifrada)</td>
+            <td>Al registrarse</td>
+            <td>Sí</td>
+          </tr>
+          <tr>
+            <td>Perfiles de usuario</td>
+            <td>Al crear perfiles dentro de la cuenta</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Historial de visualización</td>
+            <td>Al reproducir contenido</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Lista personal (Mi lista)</td>
+            <td>Al añadir contenido</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Valoraciones y reacciones</td>
+            <td>Al valorar contenido</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Comentarios</td>
+            <td>Al publicar comentarios</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Información de suscripción</td>
+            <td>Al adquirir un plan</td>
+            <td>Solo con plan</td>
+          </tr>
+          <tr>
+            <td>Sesiones por dispositivo</td>
+            <td>Al iniciar sesión</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Datos de uso (acciones, páginas visitadas)</td>
+            <td>Durante la navegación</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>No recopilamos documentos de identidad, datos bancarios propios ni datos de pago directos. Las transacciones se realizan a través de la plataforma de Roblox, que tiene su propia política de privacidad independiente.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="pp-section" id="s2">
+      <span class="section-num">02</span>
+      <h2>Cómo usamos tu información</h2>
+      <p>Utilizamos la información que recopilamos exclusivamente para los siguientes fines:</p>
+      <ul>
+        <li><div class="li-dot"></div><span><strong>Gestionar tu cuenta:</strong> crear y mantener tu perfil, permitirte iniciar sesión y gestionar tus preferencias.</span></li>
+        <li><div class="li-dot"></div><span><strong>Personalizar tu experiencia:</strong> mostrar recomendaciones basadas en lo que has visto, recordar tu progreso en series y películas.</span></li>
+        <li><div class="li-dot"></div><span><strong>Gestionar suscripciones:</strong> verificar y activar planes adquiridos, identificar a usuarios con acceso premium.</span></li>
+        <li><div class="li-dot"></div><span><strong>Seguridad:</strong> detectar accesos no autorizados, gestionar sesiones activas y proteger tu cuenta.</span></li>
+        <li><div class="li-dot"></div><span><strong>Mejorar la plataforma:</strong> analizar patrones de uso de forma agregada y anónima para mejorar el servicio.</span></li>
+        <li><div class="li-dot"></div><span><strong>Comunicaciones de servicio:</strong> enviarte notificaciones relacionadas con tu cuenta cuando sea necesario.</span></li>
+      </ul>
+      <div class="pp-warn">
+        ⚠️ No usamos tus datos personales para publicidad de terceros, ni los vendemos, ni los cedemos a empresas externas con fines comerciales.
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="pp-section" id="s3">
+      <span class="section-num">03</span>
+      <h2>Almacenamiento y seguridad</h2>
+      <p>Todos los datos de usuario se almacenan de forma segura en <strong>Google Firebase</strong> (Firestore y Realtime Database), una infraestructura de nivel empresarial que incluye:</p>
+      <ul>
+        <li><div class="li-dot"></div><span>Cifrado en tránsito mediante HTTPS/TLS</span></li>
+        <li><div class="li-dot"></div><span>Cifrado en reposo de los datos almacenados</span></li>
+        <li><div class="li-dot"></div><span>Control de acceso basado en reglas de seguridad de Firebase</span></li>
+        <li><div class="li-dot"></div><span>Las contraseñas son gestionadas por Firebase Authentication y <strong>nunca se almacenan en texto plano</strong></span></li>
+        <li><div class="li-dot"></div><span>Copias de seguridad automáticas gestionadas por Google</span></li>
+      </ul>
+      <p>Los datos se almacenan en servidores de Google Cloud, principalmente en la región de la Unión Europea. Aunque RBX Infinity es un proyecto independiente, nos apoyamos en la infraestructura de seguridad de Google.</p>
+      <div class="pp-highlight">
+        <strong>Retención de datos:</strong> Conservamos tus datos mientras tu cuenta esté activa. Si solicitas la eliminación de tu cuenta, borraremos toda tu información en un plazo máximo de 30 días, salvo obligación legal contraria.
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="pp-section" id="s4">
+      <span class="section-num">04</span>
+      <h2>Compartición de datos</h2>
+      <p>No compartimos tu información personal con terceros excepto en las siguientes situaciones:</p>
+      <ul>
+        <li><div class="li-dot"></div><span><strong>Google Firebase:</strong> como proveedor de infraestructura técnica. Google actúa como procesador de datos bajo acuerdos de protección de datos compatibles con el RGPD.</span></li>
+        <li><div class="li-dot"></div><span><strong>Proveedores de autenticación:</strong> si usas "Iniciar sesión con Google", Google recibe información de autenticación según su política propia.</span></li>
+        <li><div class="li-dot"></div><span><strong>Obligaciones legales:</strong> si estamos legalmente obligados a revelar información por orden judicial o requerimiento gubernamental.</span></li>
+        <li><div class="li-dot"></div><span><strong>Protección de la plataforma:</strong> en caso de fraude, abuso o riesgo grave para la seguridad de la plataforma o sus usuarios.</span></li>
+      </ul>
+      <p>Nunca vendemos, alquilamos ni comercializamos tu información personal a anunciantes ni a ninguna otra empresa.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="pp-section" id="s5">
+      <span class="section-num">05</span>
+      <h2>Tus derechos</h2>
+      <p>Como usuario de RBX Infinity tienes los siguientes derechos sobre tus datos personales:</p>
+      <ul>
+        <li><div class="li-dot"></div><span><strong>Acceso:</strong> puedes solicitar una copia de toda la información que tenemos sobre ti.</span></li>
+        <li><div class="li-dot"></div><span><strong>Rectificación:</strong> puedes corregir datos incorrectos o incompletos desde los ajustes de tu cuenta.</span></li>
+        <li><div class="li-dot"></div><span><strong>Eliminación:</strong> puedes solicitar la eliminación completa de tu cuenta y todos tus datos.</span></li>
+        <li><div class="li-dot"></div><span><strong>Portabilidad:</strong> puedes solicitar tus datos en un formato estructurado y legible.</span></li>
+        <li><div class="li-dot"></div><span><strong>Oposición:</strong> puedes oponerte al uso de tus datos para determinadas finalidades.</span></li>
+        <li><div class="li-dot"></div><span><strong>Retirada de consentimiento:</strong> puedes retirar tu consentimiento en cualquier momento cerrando o eliminando tu cuenta.</span></li>
+      </ul>
+      <p>Para ejercer cualquiera de estos derechos, contacta con nosotros a través del Discord de soporte. Atendemos las solicitudes en un plazo de 30 días.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="pp-section" id="s6">
+      <span class="section-num">06</span>
+      <h2>Cookies y tecnologías similares</h2>
+      <p>RBX Infinity utiliza <strong>localStorage</strong> y <strong>sessionStorage</strong> del navegador (no cookies tradicionales de seguimiento) para guardar preferencias locales como:</p>
+      <ul>
+        <li><div class="li-dot"></div><span>Idioma de la interfaz seleccionado</span></li>
+        <li><div class="li-dot"></div><span>Historial de búsquedas recientes</span></li>
+        <li><div class="li-dot"></div><span>Preferencias de visualización</span></li>
+        <li><div class="li-dot"></div><span>Estado de la sesión de anuncios vistos</span></li>
+      </ul>
+      <p>Estos datos se almacenan únicamente en tu dispositivo y no se transmiten a nuestros servidores. Puedes eliminarlos borrando los datos del sitio desde la configuración de tu navegador.</p>
+      <p>Firebase puede utilizar cookies propias de sesión para mantener la autenticación. Estas cookies son estrictamente necesarias para el funcionamiento de la plataforma y no se usan con fines publicitarios.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="pp-section" id="s7">
+      <span class="section-num">07</span>
+      <h2>Menores de edad</h2>
+      <p>RBX Infinity es una plataforma diseñada para audiencias generales. Sin embargo, los menores de 13 años no deben crear cuentas sin el consentimiento de un adulto responsable.</p>
+      <div class="pp-warn">
+        ⚠️ Si eres padre, madre o tutor y crees que tu hijo menor de 13 años ha creado una cuenta sin tu permiso, contacta con nosotros de inmediato para eliminar dicha cuenta y todos sus datos asociados.
+      </div>
+      <p>No recopilamos de forma intencionada información personal de menores de 13 años. Si detectamos que un usuario es menor de esa edad, procederemos a eliminar su cuenta.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="pp-section" id="s8">
+      <span class="section-num">08</span>
+      <h2>Cambios en la política de privacidad</h2>
+      <p>Podemos actualizar esta Política de Privacidad ocasionalmente para reflejar cambios en la plataforma, en la legislación aplicable o en nuestras prácticas. Cuando hagamos cambios significativos:</p>
+      <ul>
+        <li><div class="li-dot"></div><span>Actualizaremos la fecha de "Última actualización" en la parte superior de este documento.</span></li>
+        <li><div class="li-dot"></div><span>Publicaremos un aviso visible en la plataforma durante al menos 7 días.</span></li>
+        <li><div class="li-dot"></div><span>Para cambios sustanciales, notificaremos a los usuarios a través de nuestro servidor de Discord.</span></li>
+      </ul>
+      <p>El uso continuado de RBX Infinity tras la publicación de cambios constituye la aceptación de la nueva Política de Privacidad.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="pp-section" id="s9">
+      <span class="section-num">09</span>
+      <h2>Contacto</h2>
+      <p>Si tienes preguntas, dudas o deseas ejercer tus derechos relacionados con la privacidad, puedes contactarnos a través de los siguientes canales:</p>
+      <div class="contact-card">
+        <div class="contact-icon">💬</div>
+        <div class="contact-info">
+          <h4>Discord de soporte — RBX Infinity</h4>
+          <p>Canal principal para solicitudes de privacidad, eliminación de datos y preguntas sobre seguridad de la cuenta. Respondemos en un plazo de 24–48 horas.</p>
+          <a href="https://discord.gg/K4bj6XBHeq" target="_blank" rel="noopener">
+            Unirse al Discord de RBX Infinity →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────────────────── -->
+<footer>
+  <img src="https://i.ibb.co/wNhs5YBC/1000013504.jpg" alt="RBX Infinity">
+  <span>© 2026 RBX Infinity. Todos los derechos reservados.</span>
+  <a href="index.html">Inicio</a>
+  <a href="collabwithus.html">Colaborar</a>
+  <span>Versión del documento: 1.0</span>
+</footer>
+
+<script>
+  // Active TOC link on scroll
+  const sections = document.querySelectorAll('.pp-section');
+  const links = document.querySelectorAll('.toc-list a');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

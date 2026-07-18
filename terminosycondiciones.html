@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos y Condiciones — RBX Infinity</title>
+  <link rel="icon" href="https://i.ibb.co/wNhs5YBC/1000013504.jpg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #00060f;
+      --bg-card:  #000d1f;
+      --border:   rgba(26,127,255,0.15);
+      --blue:     #1a7fff;
+      --blue-dim: rgba(26,127,255,0.12);
+      --text:     #e8eaf0;
+      --muted:    rgba(232,234,240,0.5);
+      --radius:   14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ─── NAVBAR ─────────────────────────────────────────────────────────────── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; gap: 16px;
+      padding: 0 44px; height: 64px;
+      background: rgba(0,6,15,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { height: 34px; object-fit: contain; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--blue); text-decoration: none; font-size: .85rem;
+      font-weight: 600; transition: opacity .2s;
+    }
+    .nav-back:hover { opacity: .75; }
+    .nav-title {
+      flex: 1; text-align: right; font-size: .82rem;
+      color: var(--muted); font-weight: 500;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────────────────────────── */
+    .hero {
+      padding: 110px 44px 52px;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(26,127,255,.1), transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { max-width: 760px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-dim); border: 1px solid var(--border);
+      border-radius: 20px; padding: 4px 14px; margin-bottom: 18px;
+      font-size: .72rem; font-weight: 700; color: var(--blue);
+      letter-spacing: .5px; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800;
+      letter-spacing: -.5px; line-height: 1.2; margin-bottom: 14px;
+      color: var(--text);
+    }
+    .hero-meta {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      font-size: .8rem; color: var(--muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* ─── LAYOUT ─────────────────────────────────────────────────────────────── */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 52px 44px 100px;
+    }
+
+    /* ─── TOC ────────────────────────────────────────────────────────────────── */
+    .toc {
+      position: sticky; top: 84px; align-self: start;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+    }
+    .toc-title {
+      font-size: .72rem; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: .6px; margin-bottom: 14px;
+    }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .toc-list li a {
+      display: block; font-size: .82rem; color: var(--muted);
+      text-decoration: none; padding: 5px 8px; border-radius: 7px;
+      transition: all .18s;
+    }
+    .toc-list li a:hover { color: var(--text); background: var(--blue-dim); }
+    .toc-list li a.active { color: var(--blue); background: var(--blue-dim); font-weight: 600; }
+
+    /* ─── CONTENT ────────────────────────────────────────────────────────────── */
+    .content { min-width: 0; }
+
+    .pp-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 84px;
+    }
+
+    .section-num {
+      display: inline-block;
+      background: var(--blue-dim); border: 1px solid var(--border);
+      border-radius: 6px; padding: 2px 10px;
+      font-size: .7rem; font-weight: 800; color: var(--blue);
+      letter-spacing: .4px; margin-bottom: 10px;
+    }
+
+    .pp-section h2 {
+      font-size: 1.25rem; font-weight: 700; color: var(--text);
+      margin-bottom: 16px; line-height: 1.3;
+    }
+
+    .pp-section p {
+      font-size: .91rem; color: var(--muted); margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .pp-section ul, .pp-section ol {
+      margin: 12px 0 18px 0; padding-left: 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .pp-section li {
+      font-size: .9rem; color: var(--muted);
+      display: flex; align-items: flex-start; gap: 10px;
+      line-height: 1.65;
+    }
+    .li-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0; margin-top: 8px;
+    }
+
+    /* Highlight box */
+    .pp-highlight {
+      background: var(--blue-dim); border: 1px solid var(--border);
+      border-left: 3px solid var(--blue); border-radius: var(--radius);
+      padding: 18px 22px; margin: 18px 0;
+      font-size: .88rem; color: var(--text); line-height: 1.75;
+    }
+    .pp-highlight strong { color: var(--blue); }
+
+    /* Warning box */
+    .pp-warn {
+      background: rgba(255,200,0,.06); border: 1px solid rgba(255,200,0,.2);
+      border-left: 3px solid #ffc800; border-radius: var(--radius);
+      padding: 16px 20px; margin: 16px 0;
+      font-size: .86rem; color: rgba(255,232,128,.85); line-height: 1.7;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 16px 0;
+      font-size: .84rem;
+    }
+    .data-table th {
+      background: rgba(26,127,255,.1); padding: 10px 14px;
+      text-align: left; font-weight: 700; color: var(--text);
+      border: 1px solid var(--border); font-size: .78rem;
+      letter-spacing: .3px; text-transform: uppercase;
+    }
+    .data-table td {
+      padding: 10px 14px; border: 1px solid rgba(255,255,255,.06);
+      color: var(--muted); vertical-align: top;
+    }
+    .data-table tr:hover td { background: rgba(255,255,255,.02); }
+
+    /* Divider */
+    .pp-divider {
+      height: 1px; background: var(--border); margin: 0 0 48px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 32px;
+      display: flex; align-items: flex-start; gap: 18px;
+    }
+    .contact-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--blue-dim); display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; font-size: 1.4rem;
+    }
+    .contact-info h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .contact-info p { font-size: .85rem; color: var(--muted); margin-bottom: 10px; }
+    .contact-info a {
+      color: var(--blue); font-weight: 600; text-decoration: none;
+      font-size: .85rem;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+    footer {
+      text-align: center; padding: 28px 44px;
+      border-top: 1px solid var(--border);
+      font-size: .78rem; color: var(--muted);
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+    footer img { height: 22px; opacity: .5; }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
+    @media (max-width: 780px) {
+      .navbar { padding: 0 20px; }
+      .hero { padding: 96px 20px 40px; }
+      .layout { grid-template-columns: 1fr; padding: 32px 20px 80px; gap: 24px; }
+      .toc { position: static; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ──────────────────────────────────────────────────────────────── -->
+<nav class="navbar">
+  <img class="nav-logo" src="https://i.ibb.co/wNhs5YBC/1000013504.jpg" alt="RBX Infinity">
+  <a class="nav-back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    Volver a RBX Infinity
+  </a>
+  <span class="nav-title">Términos y Condiciones</span>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      Documento legal
+    </div>
+    <h1>Términos y Condiciones</h1>
+    <div class="hero-meta">
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+        Última actualización: 1 de junio de 2026
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Aplicable en todo el mundo
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAIN LAYOUT ──────────────────────────────────────────────────────────── -->
+<div class="layout">
+
+  <!-- TABLA DE CONTENIDOS -->
+  <aside class="toc">
+    <div class="toc-title">Contenido</div>
+    <ul class="toc-list"><li><a href="#s1">1. Aceptación de los términos</a></li><li><a href="#s2">2. Descripción del servicio</a></li><li><a href="#s3">3. Cuentas de usuario</a></li><li><a href="#s4">4. Suscripciones y pagos</a></li><li><a href="#s5">5. Normas de uso</a></li><li><a href="#s6">6. Propiedad intelectual</a></li><li><a href="#s7">7. Contenido de usuarios</a></li><li><a href="#s8">8. Suspensión de cuentas</a></li><li><a href="#s9">9. Limitación de responsabilidad</a></li><li><a href="#s10">10. Cambios en los términos</a></li><li><a href="#s11">11. Legislación aplicable</a>
+<main class="content">
+<div class="pp-highlight"><strong>Resumen:</strong> Al utilizar RBX Infinity aceptas estos Términos y Condiciones. Si no estás de acuerdo con ellos, no debes utilizar la plataforma.</div>
+<div class="pp-divider"></div>
+<section class="pp-section" id="s1"><span class="section-num">01</span><h2>Aceptación de los términos</h2><p>El acceso y uso de RBX Infinity implica la aceptación de estos Términos y Condiciones.</p></section><section class="pp-section" id="s2"><span class="section-num">02</span><h2>Descripción del servicio</h2><p>RBX Infinity ofrece una plataforma para descubrir y visualizar contenido dentro de las funciones disponibles.</p></section><section class="pp-section" id="s3"><span class="section-num">03</span><h2>Cuentas de usuario</h2><p>Eres responsable de mantener la seguridad de tu cuenta y de la información que proporciones.</p></section><section class="pp-section" id="s4"><span class="section-num">04</span><h2>Suscripciones y pagos</h2><p>Los planes y ventajas pueden cambiar. Las compras se procesan mediante plataformas externas cuando corresponda.</p></section><section class="pp-section" id="s5"><span class="section-num">05</span><h2>Normas de uso</h2><p>No está permitido abusar del servicio, intentar vulnerar la seguridad, distribuir malware o infringir la legislación.</p></section><section class="pp-section" id="s6"><span class="section-num">06</span><h2>Propiedad intelectual</h2><p>Los logotipos, diseño y software de RBX Infinity están protegidos por la legislación aplicable.</p></section><section class="pp-section" id="s7"><span class="section-num">07</span><h2>Contenido de usuarios</h2><p>Los usuarios son responsables de los comentarios y contenido que publiquen.</p></section><section class="pp-section" id="s8"><span class="section-num">08</span><h2>Suspensión de cuentas</h2><p>Podemos suspender o eliminar cuentas que incumplan estos términos o pongan en riesgo la plataforma.</p></section><section class="pp-section" id="s9"><span class="section-num">09</span><h2>Limitación de responsabilidad</h2><p>El servicio se proporciona 'tal cual'. No garantizamos disponibilidad ininterrumpida ni ausencia total de errores.</p></section><section class="pp-section" id="s10"><span class="section-num">10</span><h2>Cambios en los términos</h2><p>Podremos modificar estos términos publicando una versión actualizada.</p></section><section class="pp-section" id="s11"><span class="section-num">11</span><h2>Legislación aplicable</h2><p>Estos términos se interpretarán conforme a la legislación aplicable según corresponda.</p></section><section class="pp-section" id="s12"><span class="section-num">12</span><h2>Contacto</h2><p>Para cualquier consulta legal o relacionada con estos términos, utiliza el servidor oficial de Discord de RBX Infinity.</p></section></main>l Discord de RBX Infinity →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────────────────── -->
+<footer>
+  <img src="https://i.ibb.co/wNhs5YBC/1000013504.jpg" alt="RBX Infinity">
+  <span>© 2026 RBX Infinity. Todos los derechos reservados.</span>
+  <a href="index.html">Inicio</a>
+  <a href="collabwithus.html">Colaborar</a>
+  <span>Versión del documento: 1.0</span>
+</footer>
+
+<script>
+  // Active TOC link on scroll
+  const sections = document.querySelectorAll('.pp-section');
+  const links = document.querySelectorAll('.toc-list a');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
